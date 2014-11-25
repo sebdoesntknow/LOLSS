@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}LOLSS{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    {% if not known %}
+    <p>Please register for a better experience!</p>
+    {% else %}
+    <p>Welcome back {% if name %}{{ name }}{% endif %}! check what twitch.tv has for you today!</p>
+    {% endif %}
+</div>
+{{ wtf.quick_form(form) }}
+{% endblock %}
