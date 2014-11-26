@@ -28,10 +28,10 @@ def create_app(config_name):
 
     # attach routes and custom error pages here
     from .main import main as main_blueprint
-    from .auth import auth as auth_blueprint
+    #from .auth import auth as auth_blueprint
 
     app.register_blueprint(main_blueprint)
-    app.register_blueprint(auth_blueprint, url_prefix='/auth')
+    #app.register_blueprint(auth_blueprint, url_prefix='/auth')
 
     return app
 

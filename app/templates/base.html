@@ -1,6 +1,6 @@
 {% extends "bootstrap/base.html" %}
 
-{% block title %}LOL Stream Sort{% endblock %}
+{% block title %}LOLSS{% endblock %}
 
 {% block head %}
 {{ super() }}
@@ -26,9 +26,9 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 {% if current_user.is_authenticated() %}
-                <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
+                <li>Log Out</li>
                 {% else %}
-                <li><a href="{{ url_for('auth.login') }}">Log In</a></li>
+                <li>Log In</li>
                 {% endif %}
             </ul>
         </div>
@@ -47,9 +47,4 @@
 
     {% block page_content %}{% endblock %}
 </div>
-{% endblock %}
-
-{% block scripts %}
-{{ super() }}
-{{ moment.include_moment() }}
 {% endblock %}
