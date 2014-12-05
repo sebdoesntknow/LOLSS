@@ -2,6 +2,7 @@ from flask import current_app
 from . import db, login_manager
 from flask.ext.login import UserMixin
 
+# App perms
 class Role(db.Model):
     __tablename__ = 'roles'
     id = db.Column(db.Integer, primary_key=True)
@@ -13,6 +14,7 @@ class Role(db.Model):
     def __repr__(self):
         return '<Role %r>' % self.name
 
+# User base
 class User(UserMixin, db.Model):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)

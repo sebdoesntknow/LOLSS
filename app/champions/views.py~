@@ -1,0 +1,11 @@
+from flask import render_template, json
+from . import champions
+
+# Riot api: https://las.api.pvp.net/api/lol/static-data/las/v1.2/champion?locale=en_US&champData=all&api_key=RIOT_DEV_KEY
+
+@champions.route('/')
+# Champ view - get the champions list from riot json
+# and create a sorted list with it, display champ icon
+# using Riot data dragon
+def index():
+    return '<h1>Streams per champion!</h1>'

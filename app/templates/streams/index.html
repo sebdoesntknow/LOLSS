@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}LOLSS{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    {% if stream_list %}
+        <p><strong>Here's the list of available streams!</strong></p>
+        {% for stream in  stream_list %}
+    <p><li>
+	Name: {{ stream['channel']['name'] }}<br/>
+	<a href={{ stream['channel']['url'] }} target="_blank"><img border="0" alt="{{ stream['channel']['status'] }}" src="{{ stream['preview']['medium'] }}"></a><br/>
+	Game: {{ stream['game'] }}<br/>
+	Rank: Pending<br/>
+	Viewers: {{ stream['viewers'] }}
+    </li></p>
+	{% endfor %}
+    {% else %}
+        <p><strong>No streams available.</strong></p>
+    {% endif %}
+</div>
+{% endblock %}
