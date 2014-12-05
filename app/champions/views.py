@@ -8,7 +8,12 @@ from . import champions
 # using Riot data dragon
 @champions.route('/champion-streams')
 def champ_index():
-    return render_template('champions/champ_index.html')
+    with open('/tmp/riot_data.dat', 'r') as riot_data_file:
+        riot_data = json.loads(riot_data_file.read())
+        current_champ_pool = riot_data['keys']
+        
+    return render_template('champions/champ_index.html',
+                           current_champ_pool=current_champ_pool)
 
 @champions.route('/champion/<champion>')
 def single_champ(champion):
