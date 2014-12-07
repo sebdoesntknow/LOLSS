@@ -6,6 +6,12 @@ class Config(object):
     # Get secret key
     SECRET_KEY = os.environ.get('SECRET_KEY')
 
+    # Riot dev key
+    # RIOT_DEV_KEY = os.environ.get()
+
+    # Riot CDN | Not working ATM, need to fix
+    CDN_DOMAIN = os.environ.get('RIOT_CDN')
+
     # Mailserver conf
     LOLSS_MAIL_SUBJECT_PREFIX = os.environ.get('LOLSS_MAIL_PREFIX')
     LOLSS_MAIL_SENDER = os.environ.get('LOLSS_MAIL_SENDER')

@@ -4,6 +4,7 @@ from flask.ext.bootstrap import Bootstrap
 #from flask.ext.moment import Moment
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.login import LoginManager
+from flask.ext.cdn import CDN
 from config import config
 
 bootstrap = Bootstrap()
@@ -13,6 +14,7 @@ db = SQLAlchemy()
 login_manager = LoginManager()
 login_manager.session_protection = 'strong'
 login_manager.login_view = 'auth.login'
+cdn = CDN()
 
 def create_app(config_name):
     # App body goes here
@@ -25,6 +27,7 @@ def create_app(config_name):
     #mail.init_app(app)
     #moment.init_app(app)
     db.init_app(app)
+    cdn.init_app(app)
 
     # attach routes and custom error pages here
     from .main import main as main_blueprint

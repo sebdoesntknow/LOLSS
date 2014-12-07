@@ -9,7 +9,7 @@
         {% for stream in  stream_list %}
     <p><li>
 	Name: {{ stream['channel']['name'] }}<br/>
-	<a href={{ stream['channel']['url'] }} target="_blank"><img border="0" alt="{{ stream['channel']['status'] }}" src="{{ stream['preview']['medium'] }}"></a><br/>
+	<a href="{{ stream['channel']['url'] }}" target="_blank"><img border="0" alt="{{ stream['channel']['status'] }}" src="{{ stream['preview']['medium'] }}"></a><br/>
 	Game: {{ stream['game'] }}<br/>
 	Rank: Pending<br/>
 	Viewers: {{ stream['viewers'] }}
