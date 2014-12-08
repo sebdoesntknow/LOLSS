@@ -3,4 +3,5 @@ __pycache__
 environ/
 lol_stream_org/
 migrations/
+restful/
 \#*\#
