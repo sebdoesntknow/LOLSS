@@ -10,7 +10,7 @@ class Config(object):
     # RIOT_DEV_KEY = os.environ.get()
 
     # Riot CDN | Not working ATM, need to fix
-    CDN_DOMAIN = os.environ.get('RIOT_CDN')
+    #CDN_DOMAIN = os.environ.get('RIOT_CDN')
 
     # Mailserver conf
     LOLSS_MAIL_SUBJECT_PREFIX = os.environ.get('LOLSS_MAIL_PREFIX')
