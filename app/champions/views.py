@@ -10,14 +10,14 @@ from . import champions
 def champ_index():
     with open('/tmp/riot_data.dat', 'r') as riot_data_file:
         riot_data = json.loads(riot_data_file.read())
-        current_champ_pool = riot_data['keys']
+        champ_pool = sorted([champ for champ in riot_data['keys'].values()])
 
     # Wukong workaround
     #if "MonkeyKing" in current_champ_pool['62']:
     #    current_champ_pool['62'] = "Wukong"
         
     return render_template('champions/champ_index.html',
-                           current_champ_pool=current_champ_pool)
+                           champ_pool=champ_pool)
 
 @champions.route('/champion/<champion>')
 def single_champ(champion):
