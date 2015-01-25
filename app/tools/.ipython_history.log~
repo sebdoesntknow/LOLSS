@@ -1,0 +1,18 @@
+# IPython log file
+
+
+from riot_api_tools import query_riot_api
+print(query_riot_api('LoL'))
+del(query_riot_api)
+from riot_api_tools import query_riot_api
+print(query_riot_api('LoL'))
+s = "Hola {}!"
+s.format("mundo")
+c = "Mundo"
+s.format(c)
+s = "Hola {c}!"
+s
+s.format(c)
+del(query_riot_api)
+from riot_api_tools import query_riot_api
+print(query_riot_api('LoL'))

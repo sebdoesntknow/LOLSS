@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}LOLSS - Twitch API search/test{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+<h1>Search on the Twitch live streams database</h1>
+</div>
+<div class="container">
+  {{ wtf.quick_form(form) }}
+  <br/>
+</div>
+<br/>
+<div class="container">
+  {% if search_results %}
+  {% for stream in search_results %}
+  <ul>
+    <a href="{{ stream['channel']['url'] }}" target="_blank">
+      <img border="0" alt="{{ stream['channel']['name'] }}" src="{{ stream['preview']['medium'] }}">
+    </a>
+    <li><strong>Game: </strong>{{ stream['game'] }}</li>
+    <li><strong>Status: </strong>{{ stream['channel']['status'] }}</li>
+    <li><strong>URL: </strong>{{ stream['channel']['url'] }}</li>
+    <li><strong>Viewers: </strong>: {{ stream['viewers'] }}</li>
+  </ul>
+  <br/>
+  {% endfor %}
+  {% else %}
+  Nothing here yet!
+  {% endif %}
+</div>
+{% endblock %}

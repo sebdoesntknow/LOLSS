@@ -1,0 +1,7 @@
+# IPython log file
+
+
+from riot_api_tools import query_riot_api
+s = query_riot_api('LoL')
+s
+print(s)
