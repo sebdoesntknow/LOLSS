@@ -24,6 +24,12 @@
             <ul class="nav navbar-nav">
                 <li><a href="{{ url_for('main.index') }}">Home</a></li>
             </ul>
+	    <ul class="nav navbar-nav">
+              <li><a href="{{ url_for('champions.champ_index') }}">Champions</a></li>
+            </ul>
+	    <ul class="nav navbar-nav">
+              <li><a href="{{ url_for('api_search.index') }}">Api Search</a></li>
+            </ul>
             <ul class="nav navbar-nav navbar-right">
                 {% if current_user.is_authenticated() %}
                 <li>Log Out</li>

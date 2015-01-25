@@ -1,6 +1,7 @@
 from flask import render_template, json
 from . import champions
 
+# Twitch api: https://api.twitch.tv/kraken/streams
 # Riot api: https://las.api.pvp.net/api/lol/static-data/las/v1.2/champion?locale=en_US&champData=all&api_key=RIOT_DEV_KEY
 
 # Champ view - get the champions list from riot json
@@ -8,14 +9,10 @@ from . import champions
 # using Riot data dragon
 @champions.route('/champion-streams')
 def champ_index():
-    with open('/tmp/riot_data.dat', 'r') as riot_data_file:
+    with open('/tmp/riot_champs_data.dat', 'r') as riot_data_file:
         riot_data = json.loads(riot_data_file.read())
         champ_pool = sorted([champ for champ in riot_data['keys'].values()])
 
-    # Wukong workaround
-    #if "MonkeyKing" in current_champ_pool['62']:
-    #    current_champ_pool['62'] = "Wukong"
-        
     return render_template('champions/champ_index.html',
                            champ_pool=champ_pool)
 

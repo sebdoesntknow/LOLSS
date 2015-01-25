@@ -1,11 +1,11 @@
 from flask import render_template
-from . import main
+from . import api_search
 
-@main.app_errorhandler(404)
+@api_search.app_errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
 
-@main.app_errorhandler(500)
+@api_search.app_errorhandler(500)
 def internal_server_error(e):
     return render_template('500.html'), 500
 

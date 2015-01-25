@@ -31,10 +31,12 @@ def create_app(config_name):
     from .auth import auth as auth_blueprint
     from .champions import champions as champ_blueprint
     from .streams import streams as streams_blueprint
+    from .api_search import api_search as api_search_blueprint
 
     app.register_blueprint(main_blueprint)
     app.register_blueprint(champ_blueprint)
     app.register_blueprint(streams_blueprint)
+    app.register_blueprint(api_search_blueprint)
     app.register_blueprint(auth_blueprint, url_prefix='/auth')
 
     return app
