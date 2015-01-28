@@ -7,3 +7,5 @@ restful/
 \#*\#
 *~$
 *log
+tmp/
+test.txt
