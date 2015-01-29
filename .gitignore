@@ -7,5 +7,10 @@ restful/
 \#*\#
 *~$
 *log
+<<<<<<< HEAD
 tmp/
 test.txt
+=======
+test.txt
+tmp/
+>>>>>>> ae38559... riot_json_get.py
