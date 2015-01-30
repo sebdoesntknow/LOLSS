@@ -21,4 +21,5 @@ class ApiGetter(object):
         pass
 
     def get_twitch(self, search):
-        yield requests.get(self.twitch_api.format(search)).json()
+        # Update to use generator instead
+        return requests.get(self.twitch_api.format(search)).json()
