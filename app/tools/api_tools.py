@@ -23,7 +23,6 @@ class ApiGetter(object):
             resp = requests.get(self.riot_champs + self.riot_dev_key)
             with open(datafile, 'w') as dfile:
                 dfile.write(resp.text)
-                
         return 'Data saved to %r' % datafile
 
     def get_twitch(self, search):
