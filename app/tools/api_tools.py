@@ -17,8 +17,14 @@ class ApiGetter(object):
         # API Search engine
         self.twitch_api = "https://api.twitch.tv/kraken/search/streams?q={}"
 
-    def get_riot(self):
-        pass
+    # get_riot() needs a lot of improvement
+    def get_riot(self, opt='champs', datafile='/tmp/riot_data.dat'):
+        if opt == 'champs':
+            resp = requests.get(self.riot_champs + self.riot_dev_key)
+            with open(datafile, 'w') as dfile:
+                dfile.write(resp.text)
+                
+        return 'Data saved to %r' % datafile
 
     def get_twitch(self, search):
         # Update to use generator instead
