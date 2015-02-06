@@ -10,6 +10,7 @@ from . import champions
 @champions.route('/champion-streams')
 def champ_index():
     with open('/tmp/riot_data.dat', 'r') as riot_data_file:
+        # Add exception when the data file is empty or missing
         riot_data = json.loads(riot_data_file.read())
         champ_pool = sorted([champ for champ in riot_data['keys'].values()])
 
