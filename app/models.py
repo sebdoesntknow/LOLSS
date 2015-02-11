@@ -32,6 +32,7 @@ class Streams(db.Model):
     __tablename__ = 'streams'
     id = db.Column(db.Integer, primary_key=True)
     stream_name = db.Column(db.String(64), unique=True, index=True)
+    current_champ = db.Column(db.String(64))
 
     def __repr__(self):
         return 'Stream %r' % self.stream
