@@ -23,26 +23,12 @@ class User(UserMixin, db.Model):
     role_id = db.Column(db.Integer, db.ForeignKey('roles.id'))
     password_hash = db.Column(db.String(128))
     confirmed = db.Column(db.Boolean, default=False)
-
+    # Twitch account name
+    twitch_acc = db.Column(db.String(64), unique=True)
+    # Summoner names, standard accounts should be limited
+    sumoner_1 = db.Column(db.String(64), unique=True)
+    summoner_2 = db.Column(db.String(64), unique=True)
+    summoner_3 = db.Column(db.String(64), unique=True)
+    
     def __repr__(self):
         return '<User %r>' % self.username
-
-## Streams 
-class Streams(db.Model):
-    __tablename__ = 'streams'
-    id = db.Column(db.Integer, primary_key=True)
-    stream_name = db.Column(db.String(64), unique=True, index=True)
-    current_champ = db.Column(db.String(64))
-
-    def __repr__(self):
-        return 'Stream %r' % self.stream
-
-## Summoners linked to streams
-class Summoners(db.Model):
-    __tablename__ = 'summoners'
-    id = db.Column(db.Integer, primary_key=True)
-    summoner_riot_id = db.Column(db.Integer)
-    summoner_name = db.Column(db.String(64))
-
-    def __repr__(self):
-        return 'Summoner %r' % self.summoner
